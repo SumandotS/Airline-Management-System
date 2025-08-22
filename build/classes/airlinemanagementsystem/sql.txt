@@ -1,0 +1,52 @@
+use airlinemanagementsystem;
+show tables;
+
+
+CREATE TABLE login (
+    username VARCHAR(20),
+    password VARCHAR(20)
+);
+
+INSERT INTO login VALUES ('admin', 'admin');
+
+
+
+
+select * from login;
+
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+
+
+create table passenger (name varchar(20), nationality varchar(20), phone varchar(15), address varchar(50), aadhar varchar(20), gender varchar(20));
+
+
+select * from passenger;
+
+create table train(f_code varchar(20), f_name varchar(20), source varchar(40), destination varchar(40));
+describe train;
+
+insert into train values("1001", "31212", "Delhi", "Mumbai");
+insert into train values("1002", "16253", "Bengaluru", "Goa");
+insert into train values("1003", "12331", "Bengaluru", "Chennai");
+insert into train values("1004", "56521", "Bellari", "Bengaluru");
+insert into train values("1005", "65343", "Chitradurga", "Ayodhya");
+
+
+select * from train;
+
+
+
+
+
+
+
+
+create table reservation(PNR varchar(15), TICKET varchar(20), aadhar varchar(20), name varchar(20), nationality varchar(30), trainname varchar(15), traincode varchar(20), src varchar(30), des varchar(30), ddate varchar(30));
+select * from reservation;
+
+
+
+
+
+create table cancel(pnr varchar(20), name varchar(40), cancelno varchar(20), fcode varchar(20), ddate varchar(30));
